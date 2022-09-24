@@ -3,11 +3,11 @@ use std::io;
 fn main() {
     println!("Input a string you would passed through a SHA-256 hashing algorithm.");
 
-    let mut userInput = String::new();
+    let mut user_input = String::new();
 
     io::stdin()
-        .read_line(&mut userInput)
+        .read_line(&mut user_input)
         .expect("Failed to read user input");
 
-    println!("Your input was: {userInput}");
+    println!("Your input was: {user_input}");
 }

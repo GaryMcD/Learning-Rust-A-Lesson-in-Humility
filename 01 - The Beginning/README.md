@@ -1,6 +1,6 @@
-Today I learn [Rust](https://github.com/rust-lang/rust). Well - not everything there is to learn about Rust. Better said would be: "Today I *begin* learning Rust." Where will this journey take me?
+Today I learn [Rust](https://github.com/rust-lang/rust). Well - not everything there is to learn about Rust. Better said would be: "Today I *begin* learning `Rust`." Where will this journey take me?
 
-Likely to the edge of madness! Or potentially it will take me back to working primarily in C# where the guardrails are nice and padded.
+Likely to the edge of madness! Or potentially it will take me back to working primarily in `C#` where the guardrails are nice and padded.
 
 ***
 
@@ -114,11 +114,11 @@ fn main() {
 
 "`fn main()`" 
 
-This seems obvious enough. Similar to a Console Application in `C#` (that is - prior to the new `.Net` code where they don't have a `main()` in `Program.cs`).
+This seems obvious enough. Similar to a Console Application in `C#` (that is - prior to the new code where they don't have a `main()` in `Program.cs`).
 
 "`println!`"
 
-Uh... what is with that `!`? To Google we go! "`! in rust`" returns:
+Uh... what is with the exclamation point? To Google we go! "`! in rust`" returns:
 
 [Reference](https://doc.rust-lang.org/book/appendix-02-operators.html)
 | Operator | Example | Explanation |
