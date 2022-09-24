@@ -1,1 +1,1 @@
-# Rust Learning
+# Learning Rust: A Journey of Incompetence
