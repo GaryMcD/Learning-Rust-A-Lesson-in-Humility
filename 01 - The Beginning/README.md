@@ -245,8 +245,3 @@ warning: variable `userInput` should have a snake case name
 ```
 
 I will fix that. And call it done for the day. Thanks for tagging along on day one of my journey!
-
-```Bash
-> cd ..
-> git commit -a -m "One Day Of Many"
-```
