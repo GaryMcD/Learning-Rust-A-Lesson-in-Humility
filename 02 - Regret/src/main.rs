@@ -1,7 +1,14 @@
 use std::io;
 
-fn print_type_of<T>(_: &T) {
-    println!("{}", std::any::type_name::<T>())
+fn bit_length_of_string(input_string: &String) -> i32 {
+
+	let mut input_length : i32 = 0;
+
+	for _ in input_string.bytes() {
+		input_length += 8;
+	}
+
+	input_length
 }
 
 fn main() {
@@ -13,8 +20,7 @@ fn main() {
         .read_line(&mut user_input)
         .expect("Failed to read user input");
 
-	for byte in user_input.bytes() {
-		println!("{byte}");
-		print_type_of(&byte);
-	}
+	let input_length = bit_length_of_string(&user_input);
+
+	println!("Length of input is: {}", input_length);
 }

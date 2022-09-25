@@ -59,7 +59,7 @@ Google Search: "`84 UTF-8`". The second result at the time I searched was this r
 
 ***
 
-Contextual Lesson Extracted: [Decimal, Binary, Hexadecimal]()
+Contextual Lesson Extracted: [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-of-Incompetence/tree/main/Contextual%20Lessons/02%20-%20Regret)
 
 ***
 
@@ -86,5 +86,91 @@ u8
 u8
 ```
 
-Ah yes. `u8`, probably means unsigned 8-bit integer. Okay. I can work with this.
+Ah yes. `u8`, probably means unsigned 8-bit integer. Okay. I can work with this. The first step in a SHA-256 algorithm is to determine the bit length of what was passed into it. My plan here is to create a function that takes in a string and returns its length in bits. The code we stole from stack overflow has an example of functions for us to use. So let's see if I can use that to make my own.
+
+```Rust
+use std::io;
+
+fn bit_length_of_string(input_string: &String) {
+
+	i32 input_length = 0;
+
+	for _ in input_string.bytes() {
+		input_length += 8;
+	}
+
+	println!("Length of input in bits is: {}",input_length);
+}
+
+fn main() {
+    println!("Input a string you would like passed through a SHA-256 hashing algorithm.");
+
+    let mut user_input = String::new();
+
+    io::stdin()
+        .read_line(&mut user_input)
+        .expect("Failed to read user input");
+
+	bit_length_of_string(&user_input);
+}
+```
+
+And...
+
+```
+ --> src/main.rs:5:10
+  |
+5 |     i32 input_length = 0;
+  |         ^^^^^^^^^^^^ expected one of `:`, `;`, `=`, `@`, or `|` 
+```
+
+Let's try...
+
+```Rust
+
+let mut input_length : i32 = 0;
+
+```
+
+Guess what! It works!
+
+```
+Input a string you would like passed through a SHA-256 hashing algorithm.
+> Test
+Length of input in bits is: 40
+```
+
+But I want to return the value 40, not print it out in the function. Using this reference helps me get a grasp of the syntax. [Reference](https://doc.rust-lang.org/rust-by-example/fn.html).
+
+```Rust
+use std::io;
+
+fn bit_length_of_string(input_string: &String) -> i32 {
+
+	let mut input_length : i32 = 0;
+
+	for _ in input_string.bytes() {
+		input_length += 8;
+	}
+
+	input_length
+}
+
+fn main() {
+	println!("Input a string you would like passed through a SHA-256 hashing algorithm.");
+
+	let mut user_input = String::new();
+
+	io::stdin()
+		.read_line(&mut user_input)
+		.expect("Failed to read user input");
+
+	let input_length = bit_length_of_string(&user_input);
+
+	println!("Length of input is: {}", input_length);
+}
+
+```
+
+And this works as well. Wahoo. I learned the syntax for functions with returns and parameters in `Rust`.
 
