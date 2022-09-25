@@ -1,7 +1,7 @@
 use std::io;
 
 fn main() {
-    println!("Input a string you would passed through a SHA-256 hashing algorithm.");
+    println!("Input a string you would like passed through a SHA-256 hashing algorithm.");
 
     let mut user_input = String::new();
 
