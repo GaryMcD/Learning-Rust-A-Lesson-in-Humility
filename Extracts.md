@@ -252,7 +252,7 @@ Notice we went from 8 digits in binary to 2 digits in hex when representing the 
 
 I won't stay on hex any longer as our explanation of binary covered the underlying patterns and principles of numbers represented in various bases. There is a lot more you could read that pertain to these topics of binary/hex and how computers communicate, etc. Here are some related Wikipedia articles:
 
-[Radix](https://en.wikipedia.org/wiki/Radix) <-- Technical explanation of the relationship between a base and the characters used to represent it (`base ten` being the ten characters of `0-9`).
+[Radix](https://en.wikipedia.org/wiki/Radix) <-- Technical explanation of the relationship between a base and the characters used to represent it.
 
 [Nybble](https://en.wikipedia.org/wiki/Nibble) <-- Four Bits.
 
