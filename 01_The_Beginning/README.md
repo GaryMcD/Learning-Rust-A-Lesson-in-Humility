@@ -38,20 +38,20 @@ Now for personal stuff.
 > cd /home/gmcdo/Documents/Coding # Navigate to where I will put code
 > mkdir RustLearning
 > cd RustLearning 
-> mkdir '01 - The Beginning'
-> cd '01 - The Beginning' 
+> mkdir '01_The_Beginning'
+> cd '01_The_Beginning' 
 > touch README.md # Make the file you are reading right now. So meta.
 > cargo init # wait... that didn't work.
 ```
 
 I receieved the error:
 ```
-error: the name `01 - The Beginning` cannot be used as a package name, the name cannot start with a digit
+error: the name `01_The_Beginning` cannot be used as a package name, the name cannot start with a digit
 If you need a package name to not match the directory name, consider using --name flag.
 If you need a binary with the name "01 - The Beginning", use a valid package name, and set the binary name to be different from the package. This can be done by setting the binary filename to `src/bin/01 - The Beginning.rs` or change the name in Cargo.toml with:
 
     [[bin]]
-    name = "01 - The Beginning"
+    name = "01_The_Beginning"
     path = "src/main.rs"
 
 ```
@@ -70,7 +70,7 @@ Ah! Okay, so `cargo init` will use the name of the directory it is in and `Rust`
 Let us break this down.
 
 ```
-Compiling RustLearning v0.1.0 (/home/gmcdo/Documents/Coding/RustLearning/01 - The Beginning)
+Compiling RustLearning v0.1.0 (/home/gmcdo/Documents/Coding/RustLearning/01_The_Beginning)
 ```
 
 Self explanatory. Next...

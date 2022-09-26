@@ -1,8 +1,8 @@
 ```Bash
-.../RustLearning> mkdir '02 - I Can Write a Function'
-.../RustLearning> cp -r '01 - The Beginning/*' '02 - I Can Write a Function'
-.../RustLearning> rm '02 - I Can Write a Function/README.md'
-.../RustLearning> touch '02 - I Can Write a Function/README.md'
+.../RustLearning> mkdir '02_I_Can_Write_A_Function'
+.../RustLearning> cp -r '01_The_Beginning/*' '02_I_Can_Write_a_Function'
+.../RustLearning> rm '02_I_Can_Write_a_Function/README.md'
+.../RustLearning> touch '02_I_Can_Write_a_Function/README.md'
 ```
 ***
 
@@ -35,7 +35,7 @@ for byte in user_input.bytes() {
 }
 ```
 
-Results in...
+And the result is...
 
 ```
 Input a string you would like passed through a SHA-256 hashing alorithm.
@@ -47,9 +47,11 @@ Input a string you would like passed through a SHA-256 hashing alorithm.
 10
 ```
 
-Okay, that "worked". It didn't compile and freak out. The documentation did say that bytes may not be what we expect. In this case it returned five values even though I only typed in four. My initial thoughts are that `Rust` either encodes some bits at the front or end of the `String` value or the fifth `bytes` is actually the encoding for when I pressed enter on my keyboard. Let's look up these values in UTF-8.
+Okay, that "worked". It didn't compile and freak out. :relieved:
 
-Google Search: "`84 UTF-8`". The second result at the time I searched was this reference [Charset.org](https://www.charset.org/utf-8). Comparing the 5 results my code printed with the chart at the website indicates what is printed is the decimal value, and that the fifth `bytes` is the line feed (user pressing enter).
+The documentation did say that bytes may not be what we expect. In this case it returned five values even though I only typed in four. My initial thoughts are that `Rust` either encodes some bits at the front or end of the `String` value or the fifth `bytes` is actually the encoding for when I pressed enter on my keyboard. Let's look up these values in UTF-8.
+
+:mag: Google Search: "`84 UTF-8`". The second result at the time I searched was this reference [Charset.org](https://www.charset.org/utf-8). Comparing the 5 results my code printed with the chart at the website indicates what is printed is the decimal value, and that the fifth `bytes` is the line feed (user pressing enter).
 
 | Dec | Hex | UTF-8 Hex | Char | Unicode description |
 | :-: | :-: | :-------: | :--: | :-----------------: |
@@ -69,7 +71,7 @@ Contextual Lesson Extracted: [Decimal, Binary, Hexadecimal](https://github.com/G
 
 So it looks like `Rust`'s internals end up converting the string to a series of 8-bit integers. I came to this conclusion because what it printed was the decimal number representation of the charactes in the string, rather than the hexadecimal byte representation. But I wan't to see if I can confirm this.
 
-Google Search: "`rust print the type of a variable`" and I found [this](https://stackoverflow.com/questions/21747136/how-do-i-print-in-rust-the-type-of-a-variable).
+:mag: Google Search: "`rust print the type of a variable`" and I found [this](https://stackoverflow.com/questions/21747136/how-do-i-print-in-rust-the-type-of-a-variable).
 
 I am going to temporarily add this to my code to see what I get printed out.
 
@@ -89,6 +91,10 @@ u8
 ```
 
 Ah yes. `u8`, probably means unsigned 8-bit integer. Okay. I can work with this. The first step in a SHA-256 algorithm is to determine the bit length of what was passed into it. My plan here is to create a function that takes in a string and returns its length in bits. The code we stole from stack overflow has an example of functions for us to use. So let's see if I can use that to make my own.
+
+Assumptions:
+1. `i32` is a 32-bit integer if `Rust` uses `u` and `8` for `u`nsigned `8`-bit integers. 
+2. `+=` is a valid operator in `Rust` integer math.
 
 ```Rust
 use std::io;
@@ -129,12 +135,12 @@ And...
 Let's try...
 
 ```Rust
-
 let mut input_length : i32 = 0;
-
 ```
 
-Guess what! It works!
+Using the `: i32` isn't what I am use to from working in `C#` but it isn't crazy. We're just declaring the variable type.
+
+Guess what! :star: It works! :star:
 
 ```
 Input a string you would like passed through a SHA-256 hashing algorithm.
@@ -143,6 +149,12 @@ Length of input in bits is: 40
 ```
 
 But I want to return the value 40, not print it out in the function. Using this reference helps me get a grasp of the syntax. [Reference](https://doc.rust-lang.org/rust-by-example/fn.html).
+
+I will need to:
+1. Add `-> i32` to the line where I declare the function.
+2. The last line of the function needs to be an `i32` without any closing `;`.
+
+I am so use to the explicit `return` from `C#`, but this will be fine.
 
 ```Rust
 use std::io;
@@ -174,4 +186,4 @@ fn main() {
 
 ```
 
-And this works as well. Wahoo. I learned the syntax for functions with returns and parameters in `Rust`.
+:tada: And this works as well. :tada: Wahoo. :tada: I learned the syntax for functions with returns and parameters in `Rust`. 
