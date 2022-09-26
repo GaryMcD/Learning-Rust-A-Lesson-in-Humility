@@ -13,5 +13,5 @@ If you are reading along and find errors or typos, feel free to submit a pull re
 Thanks for joining me in this adventure!
 
 # Table Of Contents
-- 01 - The Beginning
-- 02 - I Can Write a Function
+- [01 - The Beginning](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/01)
+- [02 - I Can Write a Function](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/02)
