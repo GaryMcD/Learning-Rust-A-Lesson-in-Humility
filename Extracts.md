@@ -1,4 +1,10 @@
-### Computer Speak
+When I write these dev blogs I tend to get a little verbose or distracted. When that happens I extract the portion that is overly verbose or not on topic and place it in here as an extract.
+
+### Table of Contents
+- 02 - I Can Write a Function
+  - [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#)
+
+# Decimal, Binary, Hexadecimal
 
 For anyone following along who is not familiar with bytes, bits, hexademical, decimal, etc. and the relationship of them all. Let me try and give a quick lesson. Bear in my mind, I taught this to myself - so I am not a professor of computer science.
 
