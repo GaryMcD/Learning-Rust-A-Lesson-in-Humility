@@ -16,6 +16,6 @@ Thanks for joining me in this adventure!
 # Table of Contents (Extracts)
 - 02 - I Can Write a Function
   - [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)
-    - [Human Numbers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#human-numbers)
-    - [Back To Computers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#back-to-computers)
+    - [Human Numbers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#human-numbers-busts_in_silhouette-1234)
+    - [Back To Computers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#back-to-computers-computer)
     - [Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#hexadecimal)
