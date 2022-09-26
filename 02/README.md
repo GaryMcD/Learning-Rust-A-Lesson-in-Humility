@@ -8,7 +8,7 @@
 ```
 ***
 
-### What is the user saying?
+### What is the user saying? :thought_balloon:
 
 Today I will need to figure out how to process and prepare the input from the user. From my experience with making sha-256 hash algorithms in the past, and to make my code (at least early on) more readable, I want to take the string input and convert to some sort of bit representation. So, let's do some research into `Rust`'s types.
 
@@ -71,7 +71,7 @@ Contextual Lesson Extracted: [Decimal, Binary, Hexadecimal](https://github.com/G
 
 ***
 
-### Back To Coding
+### Back To Coding :wrench:
 
 I want to confirm the underlying type of what I am storing, just to make sure I don't make any unsafe assumptions and mess myself up later.
 
