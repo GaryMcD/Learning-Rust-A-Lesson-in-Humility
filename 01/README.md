@@ -1,8 +1,6 @@
 # The Beginning
 
-Today I learn [Rust](https://github.com/rust-lang/rust). Well - not everything there is to learn about Rust. Better said would be: "Today I *begin* learning `Rust`." Where will this journey take me?
-
-Likely to the edge of madness! Or potentially it will take me back to working primarily in `C#` where the guardrails are nice and padded.
+Today I learn [Rust](https://github.com/rust-lang/rust). Well - not everything there is to learn about Rust. Better said would be: "Today I *begin* learning `Rust`." Where will this journey take me? Likely to the edge of madness! Or potentially it will take me back to working primarily in `C#` where the guardrails are nice and padded.
 
 ***
 
@@ -58,7 +56,7 @@ If you need a binary with the name "01", use a valid package name, and set the b
 
 ```
 
-Ah! Okay, so `cargo init` will use the name of the directory it is in and `Rust` doesn't like numerical digits beginning a package name. No problem, I will set the name manually.
+Ah! Okay, so `cargo init` will use the name of the directory it is in and `Rust` doesn't like numerical digits beginning a package name. No problem, I will set the name manually. 
 
 ```Bash
 > cargo init --name "RustLearning"
@@ -120,7 +118,7 @@ This seems obvious enough. Similar to a Console Application in `C#` (that is - p
 
 "`println!`"
 
-Uh... what is with the exclamation point? To Google we go! "`! in rust`" returns:
+Uh... what is with the exclamation point? To Google we go! :mag: "`! in rust`" returns:
 
 [Reference](https://doc.rust-lang.org/book/appendix-02-operators.html)
 | Operator | Example | Explanation |
