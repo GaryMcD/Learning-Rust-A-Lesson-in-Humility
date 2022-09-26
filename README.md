@@ -1,4 +1,5 @@
-![Learningrust](https://user-images.githubusercontent.com/16275325/192370574-3471e4cb-a62e-43c4-b99a-8efdafb5e291.png)
+# Learning Rust
+## A Lesson in Humility
 
 J. M. Barrie - Author of Peter Pan
 > Life is a long lesson in humility... and so is learning Rust.
