@@ -262,4 +262,4 @@ I won't stay on hex any longer as our explanation of binary covered the underlyi
 
 [Character Encoding](https://en.wikipedia.org/wiki/Character_encoding) <-- Relationship between binary code and the characters we are presented on our screens.
 
-[Integer](https://en.wikipedia.org/wiki/Integer_(computer_science) <-- Integers/Numbers in Computer Science. Good time to learn about signed vs unsigned.
+[Integer](https://en.wikipedia.org/wiki/Integer_(computer_science)) <-- Integers/Numbers in Computer Science. Good time to learn about signed vs unsigned.
