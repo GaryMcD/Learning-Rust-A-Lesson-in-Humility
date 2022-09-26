@@ -1,1 +1,1 @@
-# Learning Rust: A Lesson of Incompetence
+# Learning Rust: A Lesson in Humility

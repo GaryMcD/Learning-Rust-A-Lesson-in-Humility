@@ -61,7 +61,7 @@ Google Search: "`84 UTF-8`". The second result at the time I searched was this r
 
 ***
 
-Contextual Lesson Extracted: [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-of-Incompetence/tree/main/Contextual%20Lessons/02%20-%20I%20Can%20Write%20a%20Function)
+Contextual Lesson Extracted: [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/Contextual%20Lessons/02%20-%20I%20Can%20Write%20a%20Function)
 
 ***
 
