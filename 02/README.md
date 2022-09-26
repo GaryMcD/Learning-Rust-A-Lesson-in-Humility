@@ -1,3 +1,5 @@
+# I Can Write a Function
+
 ```Bash
 .../RustLearning> mkdir '02_I_Can_Write_A_Function'
 .../RustLearning> cp -r '01_The_Beginning/*' '02_I_Can_Write_a_Function'

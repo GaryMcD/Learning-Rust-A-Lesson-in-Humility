@@ -1,3 +1,5 @@
+# The Beginning
+
 Today I learn [Rust](https://github.com/rust-lang/rust). Well - not everything there is to learn about Rust. Better said would be: "Today I *begin* learning `Rust`." Where will this journey take me?
 
 Likely to the edge of madness! Or potentially it will take me back to working primarily in `C#` where the guardrails are nice and padded.
