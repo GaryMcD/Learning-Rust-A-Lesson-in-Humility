@@ -9,6 +9,13 @@ If you are reading along and find errors or typos, feel free to submit a pull re
 
 Thanks for joining me in this adventure!
 
-# Table Of Contents
+# Table Of Contents (Dev Sessions)
 - [01 - The Beginning](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/01)
 - [02 - I Can Write a Function](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/02)
+
+# Table of Contents (Extracts)
+- 02 - I Can Write a Function
+  - [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)
+    - [Human Numbers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#human-numbers)
+    - [Back To Computers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#back-to-computers)
+    - [Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#hexadecimal)
