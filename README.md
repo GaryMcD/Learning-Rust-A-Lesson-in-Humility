@@ -1,5 +1,4 @@
-# Learning Rust
-## A Lesson in Humility
+# Learning Rust - A Lesson in Humility
 
 J. M. Barrie - Author of Peter Pan
 > Life is a long lesson in humility... and so is learning Rust.
