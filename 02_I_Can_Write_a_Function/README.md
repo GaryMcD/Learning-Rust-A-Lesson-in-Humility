@@ -186,4 +186,4 @@ fn main() {
 
 ```
 
-:tada: And this works as well. :tada: Wahoo. :tada: I learned the syntax for functions with returns and parameters in `Rust`. 
+:tada: And this works as well. :tada: Wahoo. :tada: I learned the syntax for functions with returns and parameters in `Rust`. :tada:
