@@ -1,10 +1,10 @@
 # I Can Write a Function
 
 ```Bash
-.../RustLearning> mkdir '02_I_Can_Write_A_Function'
-.../RustLearning> cp -r '01_The_Beginning/*' '02_I_Can_Write_a_Function'
-.../RustLearning> rm '02_I_Can_Write_a_Function/README.md'
-.../RustLearning> touch '02_I_Can_Write_a_Function/README.md'
+.../RustLearning> mkdir '02'
+.../RustLearning> cp -r '01/*' '02'
+.../RustLearning> rm '02/README.md'
+.../RustLearning> touch '02/README.md'
 ```
 ***
 
