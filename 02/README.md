@@ -98,7 +98,7 @@ Ah yes. `u8`, means unsigned 8-bit integer. Okay. I can work with this. The firs
 
 Assumptions:
 1. `i32` is a 32-bit integer if `Rust` uses `u` and `8` for `u`nsigned `8`-bit integers. 
-2. `+=` is a valid operator in `Rust` integer math.
+2. `+=` is a valid operator in `Rust` integer math. (I can't imagine any programming language that doesn't allow `+=` with integer math. If there is one, let me know! It would be intriguing to understand why.)
 
 ```Rust
 use std::io;
