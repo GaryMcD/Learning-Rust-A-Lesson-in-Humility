@@ -2,7 +2,7 @@ When I write these dev blogs I tend to get a little verbose or distracted. When 
 
 ### Table of Contents
 - 02 - I Can Write a Function
-  - [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#)
+  - [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)
 
 # Decimal, Binary, Hexadecimal
 
@@ -18,7 +18,7 @@ A group of 8 `bit`s is called a `byte`. [Wikipedia "Byte"](https://en.wikipedia.
 
 Let us take a look at how two computers might communicate a number, but first - how do two humans communicate numbers?
 
-#### Human Numbers
+## Human Numbers
 
 There are four things to get out of this next section about how humans communicate numbers:
 
@@ -89,7 +89,7 @@ What happens when we are using `9` and want to make the number larger? We set `9
 
 These four concepts can apply and translate to any `base`.
 
-#### Back To Computers
+## Back To Computers
 
 We had 10 characters we could use for `base ten` (0-9), but how many characters do computers have? Well as we said above, they only have `1` and `0`. So that means computers can only communicate in `base two`.
 
@@ -228,7 +228,7 @@ How would a computer communicate the (`base ten`) number 123?
 
 Did all of that make sense? I hope it did, because we are about to enter the land of hexadecimal.
 
-#### Hexadecimal
+## Hexadecimal
 
 In hexadecimal (aka hex) - you cry. Not really, but we are going to begin mixing letters and numbers, which sounds like middle school algebra and I cried a lot doing my algebra homework.
 
@@ -253,8 +253,13 @@ Notice we went from 8 digits in binary to 2 digits in hex when representing the 
 I won't stay on hex any longer as our explanation of binary covered the underlying patterns and principles of numbers represented in various bases. There is a lot more you could read that pertain to these topics of binary/hex and how computers communicate, etc. Here are some related Wikipedia articles:
 
 [Radix](https://en.wikipedia.org/wiki/Radix) <-- Technical explanation of the relationship between a base and the characters used to represent it (`base ten` being the ten characters of `0-9`).
+
 [Nybble](https://en.wikipedia.org/wiki/Nibble) <-- Four Bits.
+
 [Binary Code](https://en.wikipedia.org/wiki/Binary_code) <-- Sort of like "putting it all together" at a high level. Bits = Code = Instructions for Computers.
+
 [Endian](https://en.wikipedia.org/wiki/Endianness) <-- Agreed upon rules used for computers to consider the *order* of the bits.
+
 [Character Encoding](https://en.wikipedia.org/wiki/Character_encoding) <-- Relationship between binary code and the characters we are presented on our screens.
+
 [Integer](https://en.wikipedia.org/wiki/Integer_(computer_science) <-- Integers/Numbers in Computer Science. Good time to learn about signed vs unsigned.
