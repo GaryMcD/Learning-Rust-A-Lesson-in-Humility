@@ -1,8 +1,8 @@
 ```Bash
-.../RustLearning> mkdir '02 - Regret'
-.../RustLearning> cp -r '01 - The Beginning/*' '02 - Regret'
-.../RustLearning> rm '02 - Regret/README.md'
-.../RustLearning> touch '02 - Regret/README.md'
+.../RustLearning> mkdir '02 - I Can Write a Function'
+.../RustLearning> cp -r '01 - The Beginning/*' '02 - I Can Write a Function'
+.../RustLearning> rm '02 - I Can Write a Function/README.md'
+.../RustLearning> touch '02 - I Can Write a Function/README.md'
 ```
 ***
 
@@ -35,6 +35,8 @@ for byte in user_input.bytes() {
 }
 ```
 
+Results in...
+
 ```
 Input a string you would like passed through a SHA-256 hashing alorithm.
 > Test
@@ -59,7 +61,7 @@ Google Search: "`84 UTF-8`". The second result at the time I searched was this r
 
 ***
 
-Contextual Lesson Extracted: [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-of-Incompetence/tree/main/Contextual%20Lessons/02%20-%20Regret)
+Contextual Lesson Extracted: [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-of-Incompetence/tree/main/Contextual%20Lessons/02%20-%20I%20Can%20Write%20a%20Function)
 
 ***
 
@@ -173,4 +175,3 @@ fn main() {
 ```
 
 And this works as well. Wahoo. I learned the syntax for functions with returns and parameters in `Rust`.
-
