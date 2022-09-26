@@ -11,3 +11,7 @@ I tried to teach myself `C++` a while back, but wasn't enjoying it. I still have
 If you are reading along and find errors or typos, feel free to submit a pull request to resolve it. I will work on implementing fixes and edits as quickly as I can.
 
 Thanks for joining me in this adventure!
+
+# Table Of Contents
+- 01 - The Beginning
+- 02 - I Can Write a Function
