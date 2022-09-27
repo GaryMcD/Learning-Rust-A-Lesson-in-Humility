@@ -7,11 +7,12 @@ I tried to teach myself `C++` a while back, but wasn't enjoying it. I still have
 
 If you are reading along and find errors or typos, feel free to submit a pull request to resolve it. I will work on implementing fixes and edits as quickly as I can.
 
-Thanks for joining me in this adventure!
+Thanks for joining me on this adventure!
 
 # Table Of Contents (Dev Sessions)
 - [01 - The Beginning](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/01)
 - [02 - I Can Write a Function](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/02)
+- [03 - That Spongebob Meme: "Many Hours Later"](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/03)
 
 # Table of Contents (Extracts)
 - 02 - I Can Write a Function
