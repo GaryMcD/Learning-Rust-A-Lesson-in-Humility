@@ -20,9 +20,13 @@ Computers communicate with electricty :zap: - they translate the electricty into
 
 When they have a lot of information to communicate they use a long stream of `1`s and `0`s. The two computers on either end of this communication have agreements about what different series of `1`s and `0`s might mean. They also have some sort of agreement about the pace at which they check for electricity to determine if the next value is a `1` or `0`. Individually, a `1` or `0` can't communicate much information. When computers utilize these agreed upon series they can begin to communicate boundless information. :speech_balloon: It boils down the same principles as linguistics. :abc: Individual letters may not have a great capacity to communicate information, but when we combine them we end up with words, and sentences, and paragraphs, and books and so on and so forth. This part of computer science is something I find fascinating, and online research can send you down a beautiful rabbit hole rich in history. The advent of modern computing ontop of just `1 on` and `0 off` is phenomonal.
 
-A single `1` or `0` is called a `bit`. [Wikipedia "Bit"](https://en.wikipedia.org/wiki/Bit)
+A single `1` or `0` is called a `bit`. [Wikipedia "Bit"](https://en.wikipedia.org/wiki/Bit). A group of 8 `bit`s is called a `byte`. [Wikipedia "Byte"](https://en.wikipedia.org/wiki/Byte).
 
-A group of 8 `bit`s is called a `byte`. [Wikipedia "Byte"](https://en.wikipedia.org/wiki/Byte).
+```mermaid
+flowchart TB
+  A[Individual]-->B[Bit]-->a[0] & b[1]
+  C[Group]-->c[Byte]-->d[11001100]
+```
 
 We should take a look at how two computers communicate a number, but first - how do two humans communicate numbers?
 
@@ -35,7 +39,7 @@ There are four concepts to get out of this next section about how humans communi
 3. The Base Underlying Value Represents The Amount of Characters We Can Represent a Single Digit With
 4. When We Reach the Maximum for a Digit, We Set To Zero, Carry 1, and Continue Counting.
 
-When we communicate numbers to each other, there is a lot happening in our brains under the hood to understand *what a number means*, and most of the world has agreed upon the same set of rules to use when determining *what a number _written_ means*.
+When we communicate numbers to each other, there is a lot happening in our brains under the hood to understand *what a number means*, and most of the world has agreed upon the same set of rules to use when determining *what a written number means*.
 
 Generally speaking, if I asked someone what `number` this is: `123`, they would say `one-hundred-twenty-three`.
 
@@ -45,27 +49,57 @@ Notice that they instinctively broke it down into its digits and the value (or q
 
 Written numbers across most of the world follow this format. That is, every digit we grow to the left represents 10 times as much as the digit to its right.
 
-```
- _______this represents hundreds (100)
-| ______this represents tens     ( 20)
-|| _____this represents ones     (  3)
-|||
-123
+```mermaid
+flowchart TB
+  subgraph Underlying Values
+    a[100]
+    d[hundreds]
+    
+    b[20]
+    e[tens]
+    
+    c[3]
+    f[ones]
+  end
+
+  A[1] 
+  B[2] 
+  C[3]
+  
+  D[123]
+  
+  a & d --> A
+  b & e --> B
+  c & f --> C
+  
+  A & B & C --> D
 ```
 
 This pattern is referred to as `base ten`. What that means is that every digit is multiplying the last digit by ten. I am going to refer to this as `decimal` for the remainder of this document.
 
 If I told you I had a 4 digit number (in `decimal`), you could easily determine the minimum value of that 4th digit.
 
-```
-_ _ _ _
-| | | |_Represents 1s
-| | |___Represents 1s   x 10 =   10s
-| |_____Represents 10s  x 10 =  100s
-|_______Represents 100s x 10 = 1000s
+```mermaid
+flowchart TB
+  subgraph Digits
+    A[_] 
+    B[_] 
+    C[_]
+    D[_]
+  end
+  
+  a[1000]
+  b[100]
+  c[10]
+  d[1]
+  
+  A --> a
+  B --> b
+  C --> c
+  D --> d
 ```
 
-Yes, the 4th digit would have to be equal to or greater than 1, meaning my number is at least 1000. What we did is essentially 10 to the power of 4. `10 * 10 * 10 * 10 = 1000`. We could continue this indefinitely to determine the underlying value of any digit in `decimal`.
+What we did is essentially 10 to the power of 4. `10 * 10 * 10 * 10 = 1000`. We could continue this indefinitely to determine the underlying value of any digit in `decimal`.
 
 This directly correlates to the number of characters we can represent each digit with. Notice that we only use the following characters for any numerical digit: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`. How many are there? 10! (Remember it is called `base ten`?).
 
@@ -92,7 +126,6 @@ What happens when we are using `9` and want to make the number larger? We don't 
   1 +
  --
  90
-
 ```
 
 These four concepts can apply and translate to any `base`.
@@ -128,32 +161,33 @@ In Binary
   1 +
  --
  10
-
 ```
 
 We just did 1 + 1 in `binary` and found out that 2 is represented as 10. :exclamation: :question: That can be a bit mind bending to someone that has never worked in `binary`. Remember what we learned above about how humans communicate numbers?
 
 > Moving Left Increases a Digits Underlying Value
 
-Well, in `binary`, now that we did 1 + 1 and found the value for 2 we can see this principle is true here as well. The second digit has an underlying value of 2.
+Well, in `binary`, now that we did 1 + 1 and found the value for 2 we can see this principle is true here as well. The second digit has an underlying value of 2 (as opposed 10 in `decimal`).
 
-```
-_ _ _
-| | |_Represents 1s
-| |___Represents 2s
-|_____Represents ?
+```mermaid
+flowchart TB
+  subgraph Underlying Values
+    a[2]
+    b[0]
+  end
+
+  A[1] 
+  B[0]
+  
+  C[10]
+  
+  a --> A
+  b --> B
+  
+  A & B --> C
 ```
 
-Any guesses on the third digit there? When we were in `decimal` we kept multiplying by 10 as we moved left. What about `binary`. You guessed it, we multiply by 2.
-
-```
-_ _ _
-| | |_Represents 1s
-| |___Represents 1s x 2 = 2s
-|_____Represents 2s x 2 = 4s
-```
-
-This might make more sense for some readers if we start with 2 and add 1 twice. In `decimal` 2 + 1 + 1 = 4. How does that process look in `binary`?
+When we were in `decimal` we kept multiplying by 10 as we moved our digits left. What about `binary`? You guessed it, we multiply by 2. This might make more sense for some readers if we start with 2 and add 1 twice in `binary`. In `decimal` 2 + 1 + 1 = 4, so at the end of this demonstration we will have the value 4 in `binary`.
 
 ```
 Binary
@@ -204,18 +238,38 @@ Binary
  100 <-- This was the result of doing 3 + 1 in binary. so 100 in binary is 4 in decimal.
 ```
 
-This pattern we have unraveled in `binary`, much like `decimal` continues indefinitely. We keep multiplying each digit by 2 to derive what it's underlying value is.
+This pattern we have unraveled in `binary`, much like `decimal` continues indefinitely. The underlying value of the digit is continuously multipled by 2 as we add digits on the left.
 
-```
-_ _ _ _ _ _ _ _
-| | | | | | | |_Represents 1s
-| | | | | | |___Represents 1s  x 2 =   2s
-| | | | | |_____Represents 2s  x 2 =   4s
-| | | | |_______Represents 4s  x 2 =   8s
-| | | |_________Represents 8s  x 2 =  16s
-| | |___________Represents 16s x 2 =  32s
-| |_____________Represents 32s x 2 =  64s
-|_______________Represents 64s x 2 = 128s
+```mermaid
+flowchart TB
+  subgraph Binary Digits
+    A[_] 
+    B[_] 
+    C[_]
+    D[_]
+    E[_] 
+    F[_] 
+    G[_]
+    H[_]
+  end
+  
+  a[128]
+  b[64]
+  c[32]
+  d[16]
+  e[8]
+  f[4]
+  g[2]
+  h[1]
+  
+  A --> a
+  B --> b
+  C --> c
+  D --> d
+  E --> e
+  F --> f
+  G --> g
+  H --> h
 ```
 
 Let us put this all together and figure out how a computer would communicate the `decimal` number 123 in `binary`? 
@@ -225,15 +279,68 @@ Let us put this all together and figure out how a computer would communicate the
 3. 59 - 32 = 17. Meaning we need to represent 17 with the rest of our bits. 32 is too large, so the next value will be 16.
 4. 17 - 16 = 1. Meaning we need to represent 17 with the rest of our bits. 16 is too large, and so is 8, and so is 4, and so is 2. So the next value will be 1.
 
-```
-01110001
- |||   |_Represents 1         1 +  0 =   1
- |||
- |||
- |||
- |||_____Represents 16       16 +  1 =  17
- ||______Represents 32       17 + 32 =  59
- |_______Represents 64       59 + 64 = 123
+```mermaid
+flowchart TB
+  subgraph sgA [Underlying Values]
+    a[128]
+    b[64]
+    c[32]
+    d[16]
+    e[8]
+    f[4]
+    g[2]
+    h[1]
+  end
+
+  subgraph sgB [" "]
+    A[0]
+    B[1]
+    C[1]
+    D[1]
+    E[0]
+    F[0]
+    G[0]
+    H[1]
+  end
+  
+  a --- A
+  b --> B
+  c --> C
+  d --> D
+  e --- E
+  f --- F
+  g --- G
+  h --> H
+  
+  linkStyle 0 stroke-width:0px;
+  linkStyle 4 stroke-width:0px;
+  linkStyle 5 stroke-width:0px;
+  linkStyle 6 stroke-width:0px;
+  
+  subgraph sgC [Putting It Together]
+    direction LR
+    
+    subgraph sga [Binary Result]
+      I[01110001]
+    end
+    
+    subgraph sgb [Decimal Result]
+      direction LR
+      J[64]
+      K["+"]
+      L[32]
+      M["+"]
+      N[16]
+      O["+"]
+      P[1]
+      Q["="]
+      R[123]
+    end
+  end
+  
+  sgB --> sga
+  
+  J --> K --> L --> M --> N --> O --> P --> Q --> R
 ```
 
 Did all of that make sense? I hope it did, because we are about to enter the land of hexadecimal and these principles get used again.
@@ -250,19 +357,31 @@ The gist of `hex` is that it isn't `base ten` or `base two`, it is `base 16`. Ea
 
 Wouldn't that also be true of `decimal`? Didn't we represent `decimal` 123 with 4 digits in `binary`, meaning that `decimal` was more "efficient" (because it was only 3 digits). Yes. But! `Hex` *_exactly_* matches up with every fourth digit of `binary`. Where as `decimal` never lines up with any `binary` digits. This perfect alignment is what makes `hex` an efficient `representation` of `binary`.
 
-```
-_ _ _ _
-| | | |_Represents 1s
-| | |___Represents 1s   x 16 =   16s
-| |_____Represents 16s  x 16 =  256s
-|_______Represents 256s x 16 = 4096s
+```mermaid
+flowchart TB
+  subgraph Hex Digits
+    A[_] 
+    B[_] 
+    C[_]
+    D[_]
+  end
+  
+  a[4096]
+  b[256]
+  c[16]
+  d[1]
+  
+  A --> a
+  B --> b
+  C --> c
+  D --> d
 ```
 
 Let us look at 123 in the different bases.
 
 | `Decimal` | `Binary` | `Hex` |
 | :-------: | :------: | :---: |
-| :one::two::three: | :one::one::one::zero::zero::zero::one: | :seven:E | 
+| :one::two::three: | :zero::one::one::one::zero::zero::zero::one: | :seven:E | 
 
 *sidebar* When I started that table, I thought there would be an E emoji, and now, out of stubborness I refuse to go back.
 
