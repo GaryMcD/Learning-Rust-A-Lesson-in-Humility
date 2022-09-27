@@ -24,7 +24,7 @@ bitvec = "1"
 
 # Time Warp :hourglass_flowing_sand:
 
-So - it is tomorrow since I edited the `Cargo.toml` file a few lines ago. Last night I laid in bed and read [Defining and Instantiating Structs](https://doc.rust-lang.org/book/ch05-01-defining-structs.html). :rose: What a beautiful thing to read before falling asleep. :rose: I am going to attempt to implement a struct to represent what the SHA-256 documentation calls a `Message` and a `Message Block`.
+So - it is tomorrow since I edited the `Cargo.toml` file a few lines ago. Last night I laid in bed and read [Defining and Instantiating Structs](https://doc.rust-lang.org/book/ch05-01-defining-structs.html). Such a beautiful thing to read before falling asleep :rose:. I kid, I kid - it was not beautiful, but it was helpful. As a result, I am going to attempt to implement a struct to represent what the SHA-256 documentation calls a `Message` and a `Message Block`.
 
 `Message` is essentially the input. `Message Block` is a 512-bit portion of the `Message`.
 
@@ -80,7 +80,9 @@ This next part. I am not so sure about. I need to:
 
 Time to read documentation! :scroll:
 
-[Rust Collections](https://doc.rust-lang.org/std/collections/index.html)
+- [Rust Collections](https://doc.rust-lang.org/std/collections/index.html)
+- [BitVec Struct](https://docs.rs/bitvec/latest/bitvec/vec/struct.BitVec.html)
+- [What is Ownership?](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
 
 Several hours have passed since I went off to read the documentation :clock1:, but I am happy to report I have accomplished my goals and it compiles without errors or warnings! Let me walk you through what I have done.
 
@@ -91,6 +93,7 @@ struct MessageBlock {
 	bits: BitVec<u8,Msb0>,
 }
 ```
+
 At this time, it just wraps the raw bits, but its good to have it in place because in a future session I will need to add some implementations to it. After creating the `MessageBlock`, I worked on a new method in the `Message` implementation: `fn into_message_blocks(self) -> Vec<MessageBlock>`. It allows us to get a collection of `MessageBlock`s as derived from the user's raw input. Want to see how I did it? Are you ready for spaghetti code? :warning:
 
 First thing to note is that the argument for the method is not `&self`, but `self`. If my understanding is right, this means we don't grab a reference to the `Message`, but instead we grab the `Message` itself. Which will allow us to take ownership of it and it's internal values. Is that right?
@@ -155,6 +158,7 @@ if is_final_block {
 	new_block_bit_vector.extend(length_padding); // Encoded length
 } else...
 ```
+
 That last bit honestly was the most painful. It took me a while to figure out the ownership, and which types to use from within the `bitvec` crate. It was messy, and I probably sifted through dozens of compiler errors and warnings before ending up with this functionality. But you know what? It works. And I am not trying to be efficient with my code, so I am happy if it just compiles and runs. At some point I will need to circle back and write tests to confirm the bits are actually as I expected them to be. But that is for another day.
 
 That one function encapsulates what was probably 5+ hours of work on my end. It was incredibly satisfying when I got it to work, but was tiring and frustrating along the way. I am going to call it a night on this one. Thanks for tagging along.
