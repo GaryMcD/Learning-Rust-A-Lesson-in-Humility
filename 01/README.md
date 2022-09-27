@@ -6,7 +6,7 @@ Today I learn [Rust](https://github.com/rust-lang/rust). Well - not everything t
 
 ## How will I be learning?
 
-[Languange Documentation](https://www.rust-lang.org/learn#:~:text=Grow%20with%20Rust-,Read,-the%20core%20documentation). It is available online, but as they mention on the website, it can be launched locally with the `rustup doc` command line. Neat little trick.
+[Language Documentation](https://www.rust-lang.org/learn#:~:text=Grow%20with%20Rust-,Read,-the%20core%20documentation). It is available online, but as they mention on the website, it can be launched locally with the `rustup doc` command line. Neat little trick.
 
 I will be building an application I have built many times in C#. A SHA-256 Hashing Algorithm. A story for another day would be how in the grief of my mother passing I decided the best way to mourn her would be to lock myself away and spend two months learning `Cuda` and creating a custom Bitcoin Miner. *What a great way to spend my time.* :dissapointed:
 
