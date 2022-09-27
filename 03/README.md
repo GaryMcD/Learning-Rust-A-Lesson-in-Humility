@@ -161,4 +161,4 @@ if is_final_block {
 
 That last bit honestly was the most painful. It took me a while to figure out the ownership, and which types to use from within the `bitvec` crate. It was messy, and I probably sifted through dozens of compiler errors and warnings before ending up with this functionality. But you know what? It works. And I am not trying to be efficient with my code, so I am happy if it just compiles and runs. At some point I will need to circle back and write tests to confirm the bits are actually as I expected them to be. But that is for another day.
 
-That one function encapsulates what was probably 5+ hours of work on my end. It was incredibly satisfying when I got it to work, but was tiring and frustrating along the way. I am going to call it a night on this one. Thanks for tagging along.
+That one function encapsulates what was probably 5+ hours of work on my end. It was incredibly satisfying when I got it to work, but was tiring and frustrating along the way. I am going to call it a night on this one. Thanks for tagging along. :fist:
