@@ -1,4 +1,4 @@
-#
+# That Spongebob Meme: "Many Hours Later"
 
 Okay, so I can track the length in bits of the input. Now would be a good time to share the reference I am using for how to compute SHA-256.
 
