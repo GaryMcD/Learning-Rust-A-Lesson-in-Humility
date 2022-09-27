@@ -42,7 +42,7 @@ for byte in user_input.bytes() {
 
 And the result is...
 
-```Bash
+```
 Input a string you would like passed through a SHA-256 hashing alorithm.
 > Test
 84
@@ -80,7 +80,7 @@ I want to confirm the underlying type of what I am storing, just to make sure I 
 
 I am going to temporarily add this to my code to see what I get printed out.
 
-```Bash
+```
 Input a string you would like passed through a SHA-256 hashing alorithm.
 > Test
 84
@@ -131,7 +131,7 @@ fn main() {
 
 And...
 
-```Bash
+```
  --> src/main.rs:5:10
   |
 5 |     i32 input_length = 0;
@@ -148,7 +148,7 @@ Using the `: i32` isn't what I am use to from working in `C#` but it isn't crazy
 
 Guess what! :star: It works! :star:
 
-```Bash
+```
 Input a string you would like passed through a SHA-256 hashing algorithm.
 > Test
 Length of input in bits is: 40
