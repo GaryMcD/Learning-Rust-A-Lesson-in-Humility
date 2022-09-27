@@ -4,7 +4,7 @@ Today I learn [Rust](https://github.com/rust-lang/rust). Well - not everything t
 
 ***
 
-### How will I be learning?
+## How will I be learning?
 
 [Languange Documentation](https://www.rust-lang.org/learn#:~:text=Grow%20with%20Rust-,Read,-the%20core%20documentation). It is available online, but as they mention on the website, it can be launched locally with the `rustup doc` command line. Neat little trick.
 
@@ -32,6 +32,7 @@ I am working from within [Ubuntu 22.04 Desktop - Jammy Jellfish](https://release
 ```Bash
 > curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh # That is it! Rust is installed.
 ```
+
 Now for personal stuff.
 
 ```Bash
@@ -45,7 +46,8 @@ Now for personal stuff.
 ```
 
 I receieved the error:
-```
+
+```Bash
 error: the name `01` cannot be used as a package name, the name cannot start with a digit
 If you need a package name to not match the directory name, consider using --name flag.
 If you need a binary with the name "01", use a valid package name, and set the binary name to be different from the package. This can be done by setting the binary filename to `src/bin/01.rs` or change the name in Cargo.toml with:
@@ -56,7 +58,7 @@ If you need a binary with the name "01", use a valid package name, and set the b
 
 ```
 
-Ah! Okay, so `cargo init` will use the name of the directory it is in and `Rust` doesn't like numerical digits beginning a package name. No problem, I will set the name manually. 
+Ah! Okay, so `cargo init` will use the name of the directory it is in and `Rust` doesn't like numerical digits beginning a package name. No problem, I will set the name manually. =
 
 ```Bash
 > cargo init --name "RustLearning"
@@ -69,13 +71,13 @@ Ah! Okay, so `cargo init` will use the name of the directory it is in and `Rust`
 
 Let us break this down.
 
-```
+```Bash
 Compiling RustLearning v0.1.0 (/home/gmcdo/Documents/Coding/RustLearning/01)
 ```
 
 Self explanatory. Next...
 
-```
+```Bash
 warning: crate `RustLearning` should have a snake case name
   |
   = note: `#[warn(non_snake_case)]` on by default
@@ -84,7 +86,7 @@ warning: crate `RustLearning` should have a snake case name
 
 Hmm. I am not sure I am a big fan of that - but I don't want to be ostracized by the `Rust` community. So I will have to fix that - but I can wait. Next...
 
-```
+```Bash
 warning: `RustLearning` (bin "RustLearning") generated 1 warning
     Finished dev [unoptimized + debuginfo] target(s) in 0.52s
      Running `target/debug/RustLearning`
@@ -92,7 +94,7 @@ warning: `RustLearning` (bin "RustLearning") generated 1 warning
 
 Oh, nice. When it compiles the code and is finished it provides a nice little recap of how the compilation process went and then runs it. I imagine that will become helpful as I learn. Next...
 
-```
+```Bash
 Hello, world!
 ```
 
@@ -106,13 +108,14 @@ Let us look at the code in `src`
 # main.rs
 > cat main.rs
 ```
+
 ```Rust
 fn main() {
-    println!("Hello, world!");
+   println!("Hello, world!");
 }
 ```
 
-"`fn main()`" 
+"`fn main()`"
 
 This seems obvious enough. Similar to a Console Application in `C#` (that is - prior to the new code where they don't have a `main()` in `Program.cs`).
 
@@ -125,7 +128,7 @@ Uh... what is with the exclamation point? To Google we go! :mag: "`! in rust`" r
 | -------- | ------- | ----------- |
 | `!` | `ident!(...)` | Macro expansion |
 
-A `Macro`? 
+A `Macro`?
 
 [Looking here](https://doc.rust-lang.org/book/ch19-06-macros.html) we are given some additional context. I won't dive too deep into that at the moment - as an earlier portion of the documentation I have already read mentioned skipping the nuance of macros until Chapter 19 -. So I shall as well.
 
@@ -162,14 +165,14 @@ What I entered...
 use std::io;
 
 fn main() {
-    println!("Input a string you would like passed through a SHA-256 hashing algorithm.");
+   println!("Input a string you would like passed through a SHA-256 hashing algorithm.");
 
-    io::stdin()
-        .read_line(&mut userInput)
-        .expect("Failed to read user input");
+   io::stdin()
+      .read_line(&mut userInput)
+      .expect("Failed to read user input");
 
-    println!("Your input was:");
-    println!(userInput);
+   println!("Your input was:");
+   println!(userInput);
 }
 ```
 
@@ -181,7 +184,7 @@ Does it compile as I expect? Genuinely, as I type this I haven't run it yet - so
 
 Two errors. :sweat: I expected too much of myself. Let us take a look.
 
-```
+```Bash
 error: format argument must be a string literal
   --> src/main.rs:11:14
    |
@@ -200,7 +203,7 @@ Seems we need to adjust the way we print line when not providing a literal strin
 
 Next error.
 
-```
+```Bash
 error[E0425]: cannot find value `userInput` in this scope
  --> src/main.rs:7:25
   |
@@ -218,19 +221,19 @@ Fixed Code:
 use std::io;
 
 fn main() {
-    println!("Input a string you would liked passed through a SHA-256 hashing algorithm.");
+   println!("Input a string you would liked passed through a SHA-256 hashing algorithm.");
 
-    let mut userInput = String::new();
+   let mut userInput = String::new();
 
-    io::stdin()
-        .read_line(&mut userInput)
-        .expect("Failed to read user input");
+   io::stdin()
+      .read_line(&mut userInput)
+      .expect("Failed to read user input");
 
-    println!("Your input was: {userInput}");
+   println!("Your input was: {userInput}");
 }
 ```
 
-```
+```Bash
 Input a string you would like passed through a SHA-256 hashing algorithm.
 TestInput
 Your input was: TestInput
@@ -240,7 +243,7 @@ Your input was: TestInput
 
 There was though, a warning during compilation.
 
-```
+```Bash
 warning: variable `userInput` should have a snake case name
 ```
 

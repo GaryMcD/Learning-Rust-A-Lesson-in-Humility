@@ -20,9 +20,10 @@ First things first. Add the dependency into `Cargo.toml`
 [dependencies]
 bitvec = "1"
 ```
+
 ***
 
-# Time Warp :hourglass_flowing_sand:
+## Time Warp :hourglass_flowing_sand:
 
 So - it is tomorrow since I edited the `Cargo.toml` file a few lines ago. Last night I laid in bed and read [Defining and Instantiating Structs](https://doc.rust-lang.org/book/ch05-01-defining-structs.html). Such a beautiful thing to read before falling asleep :rose:. I kid, I kid - it was not beautiful, but it was helpful. As a result, I am going to attempt to implement a struct to represent what the SHA-256 documentation calls a `Message` and a `Message Block`.
 
@@ -34,37 +35,37 @@ Let us begin by just moving what we already have into a `Message` struct. I beli
 use std::io;
 
 fn main() {
-    println!("Input a string you would like passed through a SHA-256 hashing algorithm.");
+   println!("Input a string you would like passed through a SHA-256 hashing algorithm.");
 
-    let mut user_input = String::new();
+   let mut user_input = String::new();
 
-    io::stdin()
-        .read_line(&mut user_input)
-        .expect("Failed to read user input");
+   io::stdin()
+      .read_line(&mut user_input)
+      .expect("Failed to read user input");
 
-    let message = Message {
-    	raw_input : user_input,
-    };
+   let message = Message {
+      raw_input : user_input,
+   };
 
-	println!("Length of input is: {}", message.bit_length());
+   println!("Length of input is: {}", message.bit_length());
 }
 
 
 #[derive(Debug)]
 struct Message {
-	raw_input: String,
+   raw_input: String,
 }
 
 impl Message {
-	fn bit_length(&self) -> u32 {
-		let mut input_length : u32 = 0;
+   fn bit_length(&self) -> u32 {
+      let mut input_length : u32 = 0;
 
-		for _ in self.raw_input.bytes() {
-			input_length += 8;
-		}
+      for _ in self.raw_input.bytes() {
+         input_length += 8;
+      }
 
-		input_length
-	}
+      input_length
+   }
 }
 ```
 
@@ -75,7 +76,7 @@ Guess what?! It worked! I am getting so good at this. :star_struck:
 This next part. I am not so sure about. I need to:
 
 1. Check the length of `raw_input`
-2. Pad the ending as per sha-256 rules. This means I need to take at least a portion of the `raw_input` and *_add_* bits to it. I have no idea how to do this in `Rust`, even more so with a `BitVec`.
+2. Pad the ending as per sha-256 rules. This means I need to take at least a portion of the `raw_input` and **add** bits to it. I have no idea how to do this in `Rust`, even more so with a `BitVec`.
 3. Break up the `raw_input` into 512-bit `Message Blocks`. Yet another thing I don't know how to do in `Rust`. I am not familiar with their collection types and how to use them.
 
 Time to read documentation! :scroll:
@@ -87,10 +88,11 @@ Time to read documentation! :scroll:
 Several hours have passed since I went off to read the documentation :clock1:, but I am happy to report I have accomplished my goals and it compiles without errors or warnings! Let me walk you through what I have done.
 
 First, I added a `MessageBlock` `struct`.
+
 ```Rust
 #[derive(Debug)]
 struct MessageBlock {
-	bits: BitVec<u8,Msb0>,
+   bits: BitVec<u8,Msb0>,
 }
 ```
 
@@ -99,6 +101,7 @@ At this time, it just wraps the raw bits, but its good to have it in place becau
 First thing to note is that the argument for the method is not `&self`, but `self`. If my understanding is right, this means we don't grab a reference to the `Message`, but instead we grab the `Message` itself. Which will allow us to take ownership of it and it's internal values. Is that right?
 
 Then I started to display my fear of the compiler. :fearful: I saved for later the `original_total_length` because I need that value, but I was afraid that `self` would be gone by the time I needed it. I did the same with `original_number_of_blocks_usize`. Sidenote here...I *sort of* understand the reason for `usize` rather than just a plain integer, but I am not entirely sure of the implications in my use case. If this runs on a machine where references are a different size, does that mean my vectors full of bits will be incorrectly allocated? :question: Maybe someday I will come back to read this and have a better understanding and can answer this for myself.
+
 ```Rust
 let original_total_length = self.bit_length();
 let original_number_of_blocks = self.number_of_blocks();
@@ -106,6 +109,7 @@ let original_number_of_blocks_usize = usize::try_from(original_number_of_blocks)
 ```
 
 Now that those variables are out of the way, I created a mutable `BitVec` to hold all the raw bits (`raw_bit_vector`). This will get recycled as I cut parts of it off to make the `MessageBlock`s. As a distance cousin to the `BitVec` I created a mutable `Vec` that will be where I drop off the `MessageBlock`s as they are made. This is ultimately what will be returned from the function.
+
 ```Rust
 let byte_vector = self.raw_input.into_bytes();
 let mut raw_bit_vector = BitVec::<_,Msb0>::from_vec(byte_vector);
@@ -113,49 +117,51 @@ let mut raw_bit_vector = BitVec::<_,Msb0>::from_vec(byte_vector);
 let mut blocks: Vec<MessageBlock> = Vec::with_capacity(original_number_of_blocks_usize);
 ```
 
-These methods I am using, like `try_from` or `unwrap` or `from_vec` or `with_capactity` were all found by scrupulously checking the documentation. Lots of clicking around, skimming articles, and analyzing examples from other programmers. If `Rust` wasn't such a well documented ecosystem I am not sure I could have pulled this off in one multi hour session. 
+These methods I am using, like `try_from` or `unwrap` or `from_vec` or `with_capactity` were all found by scrupulously checking the documentation. Lots of clicking around, skimming articles, and analyzing examples from other programmers. If `Rust` wasn't such a well documented ecosystem I am not sure I could have pulled this off in one multi hour session.
 
 Okay, focus Gary.
 
 Those vectors are in place, now I am ready for a loop. The loop will be going through `raw_bit_vector` cutting off chunks of 512 bits until it has parsed everything into `MessageBlock`s. Within the loop I began by declaring some variables I will initialize later. These will be how I accomplish "recycling" the bits I haven't parsed yet, while working with the bits I need in each iteration of the loop. In most iterations of the loop, I can just cut off 512 bits and make a `MessageBlock` out of it. This doesn't hold up on the final `MessageBlock`.
+
 ```Rust
 for block_index in 0..original_number_of_blocks {
 
-	let remaining_bit_vector;
-	let mut new_block_bit_vector;
+   let remaining_bit_vector;
+   let mut new_block_bit_vector;
 
-	let is_final_block = block_index == (original_number_of_blocks - 1);
+   let is_final_block = block_index == (original_number_of_blocks - 1);
 
-	if is_final_block {
-		// SNIPPED
-	} else {
-		remaining_bit_vector = raw_bit_vector.split_off(512);
-		new_block_bit_vector = raw_bit_vector.clone();
-		raw_bit_vector = remaining_bit_vector.clone();
-	}
+   if is_final_block {
+      // SNIPPED
+   } else {
+      remaining_bit_vector = raw_bit_vector.split_off(512);
+      new_block_bit_vector = raw_bit_vector.clone();
+      raw_bit_vector = remaining_bit_vector.clone();
+   }
 
-	let new_block = MessageBlock {
-		bits: new_block_bit_vector,
-	};
+   let new_block = MessageBlock {
+      bits: new_block_bit_vector,
+   };
 
-	blocks.push(new_block);
+   blocks.push(new_block);
 };
 ```
 
 For the final one, I need to do the preprocessing/padding business. This means I need to add a single `1` bit. Then fill it with `0` bits until I have 64 bits left. And finally put the `original_total_length` (that I saved out of fear earlier) in binary on the end of the `MessageBlock` being built.
+
 ```Rust
 if is_final_block {
-	new_block_bit_vector = raw_bit_vector.clone();
+   new_block_bit_vector = raw_bit_vector.clone();
 
-	let number_of_zeros = 512 - 64 - 1 - &new_block_bit_vector.len();
-	let mut padding_zeros = bitvec![0; number_of_zeros];
+   let number_of_zeros = 512 - 64 - 1 - &new_block_bit_vector.len();
+   let mut padding_zeros = bitvec![0; number_of_zeros];
 
-	let length_padding = original_total_length.view_bits::<Msb0>();
+   let length_padding = original_total_length.view_bits::<Msb0>();
 
-	new_block_bit_vector.reserve(512 - new_block_bit_vector.capacity()); // Ensure we can hold 512 bits.
-	new_block_bit_vector.push(true); // Closing 1
-	new_block_bit_vector.append(&mut padding_zeros); // Padding Zeros
-	new_block_bit_vector.extend(length_padding); // Encoded length
+   new_block_bit_vector.reserve(512 - new_block_bit_vector.capacity()); // Ensure we can hold 512 bits.
+   new_block_bit_vector.push(true); // Closing 1
+   new_block_bit_vector.append(&mut padding_zeros); // Padding Zeros
+   new_block_bit_vector.extend(length_padding); // Encoded length
 } else...
 ```
 

@@ -9,12 +9,14 @@ If you are reading along and find errors or typos, feel free to submit a pull re
 
 Thanks for joining me on this adventure!
 
-# Table Of Contents (Dev Sessions)
+## Table Of Contents (Dev Sessions)
+
 - [01 - The Beginning](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/01)
 - [02 - I Can Write a Function](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/02)
 - [03 - That Spongebob Meme: "Many Hours Later"](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/03)
 
-# Table of Contents (Extracts)
+## Table of Contents (Extracts)
+
 - 02 - I Can Write a Function
   - [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)
     - [Human Numbers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#human-numbers-busts_in_silhouette-1234)
