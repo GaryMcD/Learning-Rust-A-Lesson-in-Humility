@@ -1,6 +1,9 @@
+# Extracts
+
 When I write these dev blogs I tend to get a little verbose or distracted. When that happens I extract the portion that is overly verbose or not on topic and place it in here as an extract.
 
-### Table of Contents
+## Table of Contents
+
 - 02 - I Can Write a Function
   - [Decimal, Binary, Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)
     - [Human Numbers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#human-numbers)
@@ -9,7 +12,7 @@ When I write these dev blogs I tend to get a little verbose or distracted. When 
 
 ***
 
-# Decimal, Binary, Hexadecimal
+### Decimal, Binary, Hexadecimal
 
 For anyone following along who is not familiar with bytes, bits, hexademical, decimal, etc. and the relationship of them all. Let me try and give a quick lesson. Bear in my mind, I taught this to myself - so I am not a professor of computer science.
 
@@ -23,7 +26,7 @@ A group of 8 `bit`s is called a `byte`. [Wikipedia "Byte"](https://en.wikipedia.
 
 We should take a look at how two computers communicate a number, but first - how do two humans communicate numbers?
 
-## Human Numbers :busts_in_silhouette: :1234:
+#### Human Numbers :busts_in_silhouette: :1234:
 
 There are four concepts to get out of this next section about how humans communicate numbers:
 
@@ -94,7 +97,7 @@ What happens when we are using `9` and want to make the number larger? We don't 
 
 These four concepts can apply and translate to any `base`.
 
-## Back To Computers :computer:
+#### Back To Computers :computer:
 
 We had 10 characters we could use for `decimal` (0-9), but how many characters do computers have? Well as we said above, they only have `1` and `0`. So that means computers can only communicate in `base two`. I am going to refer to this as `binary` for the rest of this document.
 
@@ -235,7 +238,7 @@ Let us put this all together and figure out how a computer would communicate the
 
 Did all of that make sense? I hope it did, because we are about to enter the land of hexadecimal and these principles get used again.
 
-## Hexadecimal
+#### Hexadecimal
 
 In hexadecimal - you cry. Not really, but we are going to begin mixing letters and numbers, which sounds like middle school algebra and I cried a lot doing my algebra homework. :sob: I am going to refer to this as `hex` for the rest of this document.
 
@@ -267,7 +270,7 @@ Let us look at 123 in the different bases.
 
 Notice we went from 8 digits in `binary` to 2 digits in `hex` when representing the decimal number 123. So if you're writing or recording information about `binary` values, you're going to save yourself quite a bit of space and time writing it in `hex`.
 
-I won't stay on `hex` any longer as our explanation of `decimal` and `binary` covered the underlying patterns and principles of numbers represented in various bases. There is a lot more you could read that pertain to these topics of `binary`, `hex`, and how computers communicate, etc. 
+I won't stay on `hex` any longer as our explanation of `decimal` and `binary` covered the underlying patterns and principles of numbers represented in various bases. There is a lot more you could read that pertain to these topics of `binary`, `hex`, and how computers communicate, etc.
 
 Here are some related Wikipedia articles:
 
