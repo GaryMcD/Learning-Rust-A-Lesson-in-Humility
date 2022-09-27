@@ -47,7 +47,7 @@ Now for personal stuff.
 
 I receieved the error:
 
-```Bash
+```
 error: the name `01` cannot be used as a package name, the name cannot start with a digit
 If you need a package name to not match the directory name, consider using --name flag.
 If you need a binary with the name "01", use a valid package name, and set the binary name to be different from the package. This can be done by setting the binary filename to `src/bin/01.rs` or change the name in Cargo.toml with:
@@ -71,13 +71,13 @@ Ah! Okay, so `cargo init` will use the name of the directory it is in and `Rust`
 
 Let us break this down.
 
-```Bash
+```
 Compiling RustLearning v0.1.0 (/home/gmcdo/Documents/Coding/RustLearning/01)
 ```
 
 Self explanatory. Next...
 
-```Bash
+```
 warning: crate `RustLearning` should have a snake case name
   |
   = note: `#[warn(non_snake_case)]` on by default
@@ -86,7 +86,7 @@ warning: crate `RustLearning` should have a snake case name
 
 Hmm. I am not sure I am a big fan of that - but I don't want to be ostracized by the `Rust` community. So I will have to fix that - but I can wait. Next...
 
-```Bash
+```
 warning: `RustLearning` (bin "RustLearning") generated 1 warning
     Finished dev [unoptimized + debuginfo] target(s) in 0.52s
      Running `target/debug/RustLearning`
@@ -94,7 +94,7 @@ warning: `RustLearning` (bin "RustLearning") generated 1 warning
 
 Oh, nice. When it compiles the code and is finished it provides a nice little recap of how the compilation process went and then runs it. I imagine that will become helpful as I learn. Next...
 
-```Bash
+```
 Hello, world!
 ```
 
@@ -184,7 +184,7 @@ Does it compile as I expect? Genuinely, as I type this I haven't run it yet - so
 
 Two errors. :sweat: I expected too much of myself. Let us take a look.
 
-```Bash
+```
 error: format argument must be a string literal
   --> src/main.rs:11:14
    |
@@ -203,7 +203,7 @@ Seems we need to adjust the way we print line when not providing a literal strin
 
 Next error.
 
-```Bash
+```
 error[E0425]: cannot find value `userInput` in this scope
  --> src/main.rs:7:25
   |
@@ -233,7 +233,7 @@ fn main() {
 }
 ```
 
-```Bash
+```
 Input a string you would like passed through a SHA-256 hashing algorithm.
 TestInput
 Your input was: TestInput
@@ -243,7 +243,7 @@ Your input was: TestInput
 
 There was though, a warning during compilation.
 
-```Bash
+```
 warning: variable `userInput` should have a snake case name
 ```
 
