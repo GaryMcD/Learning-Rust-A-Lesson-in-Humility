@@ -14,6 +14,7 @@ Thanks for joining me on this adventure!
 - [01 - The Beginning](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/01)
 - [02 - I Can Write a Function](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/02)
 - [03 - That Spongebob Meme: "Many Hours Later"](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/03)
+- [04 - Can I Compute Yet?](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/04)
 
 ## Table of Contents (Extracts)
 
