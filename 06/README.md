@@ -9,7 +9,7 @@ So, I can parse the input into `Word`s, and group them into appropiate `MessageB
 4) Create a `Word` equal to the result of: σ_major(w2) + w7 + σ_minor(w15) + w16.
 5) Append the new `Word` to the collection in step #1.
 6) Increment *index* by one.
-7) Repeat steps #3 through #6 am additional 47 times.
+7) Repeat steps #3 through #6 an additional 47 times.
 
 What are `σ_major()` and `σ_minor()`?
 
@@ -26,11 +26,11 @@ First I will implement `rotr` as defined in the SHA-256 algorithm. [Reference: 2
 // word.rs
 
 impl Word {
-	pub fn rotr(&self, rotation_amount: u32) -> Word {
-		let lhs = self >> rotation_amount;
-		let rhs = self << (32 - rotation_amount);
-		lhs | rhs
-	}
+   pub fn rotr(&self, rotation_amount: u32) -> Word {
+      let lhs = self >> rotation_amount;
+      let rhs = self << (32 - rotation_amount);
+      lhs | rhs
+   }
 }
 ```
 
@@ -40,24 +40,24 @@ I could have written this so that I used the `u32` wrapped inside of `Word`, but
 // word.rs
 
 impl std::ops::BitOr<Word> for Word {
-	type Output = Word;
-	fn bitor(self, rhs: Word) -> Word {
-		Word { value: self.value | rhs.value }
-	}
+   type Output = Word;
+   fn bitor(self, rhs: Word) -> Word {
+      Word { value: self.value | rhs.value }
+   }
 }
 
 impl std::ops::Shr<u32> for Word {
-	type Output = Word;
-	fn shr(self, rhs: u32) -> Word {
-		Word { value: self.value >> rhs }
-	}
+   type Output = Word;
+   fn shr(self, rhs: u32) -> Word {
+      Word { value: self.value >> rhs }
+   }
 }
 
 impl std::ops::Shl<u32> for Word {
-	type Output = Word;
-	fn shl(self, rhs: u32) -> Word {
-		Word { value: self.value << rhs }
-	}
+   type Output = Word;
+   fn shl(self, rhs: u32) -> Word {
+      Word { value: self.value << rhs }
+   }
 }
 ```
 
@@ -71,19 +71,19 @@ They are defined in 4.1.2 within the previously linked document.
 // word.rs
 
 impl Word {
-	pub fn σ_minor(&self) -> Word {
-		let rotr_7 = self.rotr(7);
-		let rotr_18 = self.rotr(18);
-		let shr_3 = self >> 3;
-		rotr_7 ^ rotr_18 ^ shr_3
-	}
+   pub fn σ_minor(&self) -> Word {
+      let rotr_7 = self.rotr(7);
+      let rotr_18 = self.rotr(18);
+      let shr_3 = self >> 3;
+      rotr_7 ^ rotr_18 ^ shr_3
+   }
 }
 
 impl std::ops::BitXor<Word> for Word {
-	type Output = Word;
-	fn bitxor(self, rhs: Word) -> Word {
-		Word { value: self.value ^ rhs.value }
-	}
+   type Output = Word;
+   fn bitxor(self, rhs: Word) -> Word {
+      Word { value: self.value ^ rhs.value }
+   }
 }
 ```
 
@@ -93,10 +93,10 @@ I almost forgot, I will need to overload `+` for `Word` so that I can add them t
 // word.rs
 
 impl std::ops::Add<Word> for Word {
-	type Output = Word;
-	fn add(self, rhs: Word) -> Word {
-		Word { value: self.value.wrapping_add(rhs.value) }
-	}
+   type Output = Word;
+   fn add(self, rhs: Word) -> Word {
+      Word { value: self.value.wrapping_add(rhs.value) }
+   }
 }
 ```
 
@@ -111,28 +111,28 @@ I will now create a function on `MessageBlock` that turns it into a `MessageSche
 
 #[derive(Debug)]
 pub struct MessageSchedule {
-	pub words: [Word; 64],
+   pub words: [Word; 64],
 }
 
 impl MessageBlock {
-	pub fn into_message_schedule(&self) -> MessageSchedule {
-		let mut schedule: [Word; 64] = [Word { value: 0 }; 64];
+   pub fn into_message_schedule(&self) -> MessageSchedule {
+      let mut schedule: [Word; 64] = [Word { value: 0 }; 64];
 		
-		for index in 0..16 {
-			schedule[index] = self.words[index];
-		}
+      for index in 0..16 {
+         schedule[index] = self.words[index];
+      }
 
-		for index in 16..64 {
-			let w2 = schedule[index-2];
-			let w7 = schedule[index-7];
-			let w15 = schedule[index-15];
-			let w16 = schedule[index-16];
+      for index in 16..64 {
+         let w2 = schedule[index-2];
+         let w7 = schedule[index-7];
+         let w15 = schedule[index-15];
+         let w16 = schedule[index-16];
 
-			schedule[index] = w2.σ_major() + w7 + w15.σ_minor() + w16;
-		}
+         schedule[index] = w2.σ_major() + w7 + w15.σ_minor() + w16;
+      }
 
-		MessageSchedule { words: schedule }
-	}
+      MessageSchedule { words: schedule }
+   }
 }
 
 // word.rs
