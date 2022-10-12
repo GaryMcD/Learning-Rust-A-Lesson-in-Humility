@@ -16,6 +16,7 @@ Thanks for joining me on this adventure!
 - [03 - That Spongebob Meme: "Many Hours Later"](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/03)
 - [04 - Can I Compute Yet?](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/04)
 - [05 - Refactoring So Early?](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/05)
+- [06 - Let's Get Down To Business](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/06)
 
 ## Table of Contents (Extracts)
 
