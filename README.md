@@ -17,7 +17,8 @@ Thanks for joining me on this adventure!
 - [04 - Can I Compute Yet?](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/04)
 - [05 - Refactoring So Early?](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/05)
 - [06 - Let's Get Down To Business](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/06)
-- [07 - Hash Computation](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/07) 
+- [07 - Hash Computation](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/07)
+- [08 - Test All The Things](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/08) 
 
 ## Table of Contents (Extracts)
 
@@ -26,3 +27,5 @@ Thanks for joining me on this adventure!
     - [Human Numbers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#human-numbers-busts_in_silhouette-1234)
     - [Back To Computers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#back-to-computers-computer)
     - [Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#hexadecimal)
+- 08 - Test All The Things
+  - [Career Path](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#career-path)

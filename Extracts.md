@@ -9,7 +9,8 @@ When I write these dev blogs I tend to get a little verbose or distracted. When 
     - [Human Numbers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#human-numbers)
     - [Back To Computers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#back-to-computers)
     - [Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#hexadecimal)
-
+- 07 - Test All The Things
+  - [Career Path](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)(https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)(https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)
 ***
 
 ### Decimal, Binary, Hexadecimal
@@ -404,3 +405,17 @@ Here are some related Wikipedia articles:
 [Character Encoding](https://en.wikipedia.org/wiki/Character_encoding) <-- Relationship between binary code and the characters we are presented on our screens.
 
 [Integer](https://en.wikipedia.org/wiki/Integer_(computer_science)) <-- Integers/Numbers in Computer Science. Good time to learn about signed vs unsigned. If you were wondering how we get negative numbers.
+
+***
+
+### Career Path
+
+I started at Microsoft at 19 years old as a games tester. I hated it, keep in mind I hated a lot of things at 19. :unamused:
+
+When my contract at Microsoft completed I worked various other jobs that required more physical extertion and -generally speaking- less technical skill. I worked on the tarmac for an airline :airplane:, loading/unloading planes, cleaning bathrooms :toilet:, refueling service vehicles, etc. I worked for a coffee chain as a barista :coffee:, and used the flexible schedule to travel extensively and volunteer full-time. Eventually (around the time I got engaged), I recognized I had a necessity to increase my wages/salary.
+
+I returned to technical work. :computer:
+
+I started again at Microsoft as a Test Associate. I taught myself beginner programming concepts online and was eventually promoted to a Software Test Engineer as my usefullness increased. The contract ended, and I moved to T-Mobile under the same title. The team was underfunded and almost immediately absorded into another portion of the company. My opportunity there was set to end within only a few weeks of being hired. To my advantage I had made an impression on the manager of another team and they hired me full time as a Business Systems Analyst. I continued to teach myself programming, finding comfort in C#. I added skills in Excel and SQL. I excelled as an analyst by taking a *testing* perspective, that is: I constantly poked at processes and functionality to confirm it worked and to determine if it could work _better_. Eventually I was promoted to Senior Business Systems Analsyst.
+
+Around this time I had become, as I felt, exceedingly comfortable with C#. I was building internal tools and sites to help my team become more efficient, or just improve the quality of our work life. The growth opportunity set before me at T-Mobile was minimal and so I began to look elsewhere. I found my home, where I am now at a smaller company. I back to the title of Quality Assurance Engineer, and using my C# skills to help develop an automated Selenium test suite.
