@@ -130,9 +130,9 @@ It's a lot of code to showcase here, so I won't show each test, but here is what
 ```Rust
 #[test]
 fn word_choice() {
-	let a = 		Word(0b00001111_00000000_11111111_11111111);
-	let b = 		Word(0b00110011_00000000_11111111_11111111);
-	let c = 		Word(0b01010101_00000000_11111111_11111111);
+	let a = 	Word(0b00001111_00000000_11111111_11111111);
+	let b = 	Word(0b00110011_00000000_11111111_11111111);
+	let c = 	Word(0b01010101_00000000_11111111_11111111);
 	let result = 	Word(0b01010011_00000000_11111111_11111111);
 	assert_eq!(Word::choice(a,b,c), result);
 }
