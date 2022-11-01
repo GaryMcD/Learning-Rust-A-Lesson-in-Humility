@@ -18,7 +18,8 @@ Thanks for joining me on this adventure!
 - [05 - Refactoring So Early?](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/05)
 - [06 - Let's Get Down To Business](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/06)
 - [07 - Hash Computation](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/07)
-- [08 - Test All The Things](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/08) 
+- [08 - Test All The Things](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/08)
+- [09 - Clean Up & More Testing](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/tree/main/09)  
 
 ## Table of Contents (Extracts)
 
