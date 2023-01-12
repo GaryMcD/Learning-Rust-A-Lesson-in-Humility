@@ -10,7 +10,7 @@ When I write these dev blogs I tend to get a little verbose or distracted. When 
     - [Back To Computers](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#back-to-computers)
     - [Hexadecimal](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#hexadecimal)
 - 07 - Test All The Things
-  - [Career Path](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)(https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)(https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)
+  - [Career Path](https://github.com/GaryMcD/Learning-Rust-A-Lesson-in-Humility/blob/main/Extracts.md#decimal-binary-hexadecimal)
 ***
 
 ### Decimal, Binary, Hexadecimal
@@ -418,4 +418,4 @@ I returned to technical work. :computer:
 
 I started again at Microsoft as a Test Associate. I taught myself beginner programming concepts online and was eventually promoted to a Software Test Engineer as my usefullness increased. The contract ended, and I moved to T-Mobile under the same title. The team was underfunded and almost immediately absorded into another portion of the company. My opportunity there was set to end within only a few weeks of being hired. To my advantage I had made an impression on the manager of another team and they hired me full time as a Business Systems Analyst. I continued to teach myself programming, finding comfort in C#. I added skills in Excel and SQL. I excelled as an analyst by taking a *testing* perspective, that is: I constantly poked at processes and functionality to confirm it worked and to determine if it could work _better_. Eventually I was promoted to Senior Business Systems Analsyst.
 
-Around this time I had become, as I felt, exceedingly comfortable with C#. I was building internal tools and sites to help my team become more efficient, or just improve the quality of our work life. The growth opportunity set before me at T-Mobile was minimal and so I began to look elsewhere. I found my home, where I am now at a smaller company. I back to the title of Quality Assurance Engineer, and using my C# skills to help develop an automated Selenium test suite.
+Around this time I had become, as I felt, exceedingly comfortable with C#. I was building internal tools and sites to help my team become more efficient, or just improve the quality of our work life. The growth opportunity set before me at T-Mobile was minimal and so I began to look elsewhere. I found my home, where I am now at a smaller company. I am back to the title of Quality Assurance Engineer, and using my C# skills to help develop an automated Selenium test suite.
